@@ -1,0 +1,7 @@
+- [x] Fix typo in config/env.js: Change jwt_EXPIRES_IN to JWT_EXPIRES_IN
+- [x] Fix variable naming in controllers/auth.controllers.js: Change newUsers to newUser
+- [x] Remove incorrect default export in controllers/auth.controllers.js
+- [x] Use imported PORT variable in app.js instead of hardcoding 3000
+- [ ] Add missing import for User model in middlewares/auth.middleware.js
+- [ ] Fix syntax error in middlewares/error.middleware.js: Missing closing brace
+- [ ] Fix validation property in models/user.model.js: Change MinLength to minLength
