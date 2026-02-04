@@ -3,19 +3,17 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 import User from "../models/user.model.js";
-import { JWT_EXPIRES_IN, JWT_SECRET } from "../config/env.js";
+import { JWT_SECRET,  JWT_EXPIRES_IN } from "../config/env.js";
 
 // what is re body? -> req.body is an object containing data sent by the client in the body of an HTTP request.
 export const signUp = async (req, res, next) => {
-    // Implement sign up logic here
+   
      const session = await mongoose.startSession();
      session.startTransaction();
 
      try{
-        // Logic to create a new user
         const { name, email, password } = req.body;
 
-        // check if user already exists
         const existingUser = await User.findOne({ email });
 
         if (existingUser) {
@@ -24,7 +22,7 @@ export const signUp = async (req, res, next) => {
             throw error;
         }
 
-        // hash password
+        
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
