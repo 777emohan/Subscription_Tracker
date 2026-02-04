@@ -1,6 +1,7 @@
 import { Router } from "express";
 import authorize from "../middlewares/auth.middleware.js";
 import { createSubscription, getUserSubscriptions } from "../controllers/subscription.controller.js";
+// import { getUserSubscriptions } from "../controllers/subscription.controller.js";
 
 const SubscriptionRouter = Router();
 

@@ -1,8 +1,10 @@
+// import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../config/env.js";
 
+
 // if someone is making a request get user details -> authorize middle -> verify -> if vaild -> next() -> get user details
-const authorize = async (req, res, next) =>{
+const authMiddleware = async (req, res, next) =>{
     try{
         let token;
 
@@ -28,4 +30,4 @@ const authorize = async (req, res, next) =>{
     }
 }
 
-export default authorize;
+export default authMiddleware;
