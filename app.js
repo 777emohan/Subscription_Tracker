@@ -36,7 +36,7 @@ app.get('/',(req,res)=>{
 });
 
 app.listen(PORT,async () => {
-    console.log(`Subscription Tracker API is running on port http://localhost:3000`);
+    console.log(`Subscription Tracker API is running on port http://localhost:${PORT}`);
 
   await connectToDatabase();
 });
